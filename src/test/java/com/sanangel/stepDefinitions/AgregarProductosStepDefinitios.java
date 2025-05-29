@@ -1,5 +1,6 @@
 package com.sanangel.stepDefinitions;
 
+import com.sanangel.task.SeleccionarPorBuscadorTask;
 import com.sanangel.task.SeleccionarPorCategoriaTask;
 import io.cucumber.java.Before;
 import io.cucumber.java.es.*;
@@ -26,12 +27,13 @@ public class AgregarProductosStepDefinitios {
         );
     }
     @Cuando("agrego al carrito el segundo producto con una cantidad de {int}")
-    public void agregoAlCarritoElSegundoProductoConUnaCantidadDe(Integer cinco) {
-
+    public void agregoAlCarritoElSegundoProductoConUnaCantidadDe(Integer cantidad) {
+        theActorInTheSpotlight().attemptsTo(
+                SeleccionarPorBuscadorTask.aniadirProductoBuscado("Atessa", cantidad)
+        );
     }
     @Entonces("debería ver que el carrito contiene {int} productos")
     public void deberíaVerQueElCarritoContieneProductos(Integer siete) {
 
     }
-
 }

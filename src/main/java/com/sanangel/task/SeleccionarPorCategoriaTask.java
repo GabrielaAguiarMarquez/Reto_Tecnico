@@ -25,6 +25,7 @@ public class SeleccionarPorCategoriaTask implements Task {
     public static SeleccionarPorCategoriaTask agregarEnLaCategoria(String categoria, int cantidad){
         return new SeleccionarPorCategoriaTask(categoria, cantidad);
     }
+
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(

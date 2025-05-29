@@ -8,4 +8,6 @@ public class InicioUI {
 
     public static final Target BTN_BUSCAR = Target.the("Boton para abrir el buscador")
             .locatedBy("//header[@class='desktop-header']//div[@class='header_search']");
+    public static final Target TXT_PRODUCTO = Target.the("Escribir el nombre del producto")
+            .locatedBy("//input[@id='dgwt-wcas-search-input-1']");
 }
