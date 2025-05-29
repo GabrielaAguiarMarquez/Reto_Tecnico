@@ -1,9 +1,11 @@
 package com.sanangel.stepDefinitions;
 
+import com.sanangel.question.CantidadEnCarrito;
 import com.sanangel.task.SeleccionarPorBuscadorTask;
 import com.sanangel.task.SeleccionarPorCategoriaTask;
 import io.cucumber.java.Before;
 import io.cucumber.java.es.*;
+import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.actions.Open;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 
@@ -33,7 +35,9 @@ public class AgregarProductosStepDefinitios {
         );
     }
     @Entonces("debería ver que el carrito contiene {int} productos")
-    public void deberíaVerQueElCarritoContieneProductos(Integer siete) {
-
+    public void deberíaVerQueElCarritoContieneProductos(Integer cantidad) {
+        theActorInTheSpotlight().should(
+                GivenWhenThen.seeThat(CantidadEnCarrito.esIgualA(cantidad))
+        );
     }
 }

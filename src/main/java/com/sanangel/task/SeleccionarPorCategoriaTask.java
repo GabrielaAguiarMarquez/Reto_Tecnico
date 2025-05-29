@@ -30,11 +30,11 @@ public class SeleccionarPorCategoriaTask implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Click.on(OPT_CATEGORIA.of(categoria)),
-                Scroll.to(TTL_PRODUCTO),
+                //Scroll.to(TTL_PRODUCTO), -> O.o me ocultaba la card
                 Click.on(TTL_PRODUCTO),
 
                 // La dulce espera (porque si que se demora :v)...
-                WaitUntil.the(TXT_CANTIDAD, isVisible()).forNoMoreThan(15).seconds(),
+                WaitUntil.the(TXT_CANTIDAD, isVisible()).forNoMoreThan(10).seconds(),
                 Scroll.to(TXT_CANTIDAD),
                 //borramos el 1 que viene por default, antes solo escribia 12, si me dio problemas xd
                 Clear.field(TXT_CANTIDAD),
